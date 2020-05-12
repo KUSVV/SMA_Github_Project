@@ -2,7 +2,7 @@ import org.graalvm.compiler.hotspot.stubs.DivisionByZeroExceptionStub;
 
 public class Calculator {
     public int calc(int a, int b, char op){
-        int result = 0;
+        int result;
         switch(op){
             case '+':
                 result= a+b;
@@ -16,6 +16,8 @@ public class Calculator {
             case '/':
                 result= a/b;
                 break;
+            default:
+                result = Integer.MIN_VALUE;
         }
         return result;
     }
