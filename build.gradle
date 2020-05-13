@@ -56,7 +56,7 @@ jacocoTestReport {
         //  html.destination file("$buildDir/jacocoHtml")
         //  xml.destination file("$buildDir/jacoco.xml")
     }
-    finalizedBy 'jacocoTestCoverageVerification'
+//    finalizedBy 'jacocoTestCoverageVerification'
 }
 // 최소 coverage 만족 조건(rule, limit)
 jacocoTestCoverageVerification {
