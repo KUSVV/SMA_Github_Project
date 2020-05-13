@@ -42,7 +42,6 @@ test {
 
 jacoco {
     toolVersion='0.8.5'
-
     //  테스트결과 리포트를 저장할 경로 변경
     //  default는 "${project.reporting.baseDir}/jacoco"
     //  reportsDir = file("$buildDir/customJacocoReportDir")
@@ -62,6 +61,8 @@ jacocoTestReport {
 jacocoTestCoverageVerification {
     violationRules {
         rule {
+//            enabled=true
+
             // 'element'가 없으면 프로젝트의 전체 파일을 합친 값을 기준으로 합니다.
             // 위의 리포트에서 'Total'로 표시된 부분입니다.
             limit {
@@ -81,9 +82,11 @@ jacocoTestCoverageVerification {
 
             // 커버리지 체크를 제외할 클래스들 (패키지 + 클래스명으로 명시)
             excludes = [
-//                '*.test.*',
+//                '**/Main',
 //                '*.Kotlin*'
             ]
+            excludes = ["**/*.*Main*.*"]
+
 
             // 브랜치 커버리지를 최소한 90% 만족시켜야 합니다.
             limit {
